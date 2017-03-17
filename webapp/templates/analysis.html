@@ -1,0 +1,122 @@
+{% extends "base.html" %} 
+{% block jscontent%}
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="/static/js/jsnetworkx.js"></script>
+<script>
+var G = new jsnx.Graph();
+ 
+G.addEdgesFrom([["疾病","行為"],["疾病","感染"],["疾病","具有"],["疾病","對於"],["疾病","目前"],["疾病","問題"],["疾病","針對"],["疾病","必須"],["疾病","包含"],["疾病","原因"],["疾病","造成"],["疾病","慢性"],["疾病","學校"],["疾病","是否"],["疾病","導致"],["疾病","藥物"],["病人","醫師"],["病人","醫療"],["病人","治療"],["病人","醫院"],["病人","反應"],["病人","專業"],["病人","藥物"],["病人","病患"],["病患","精神"],["病患","家屬"],["病患","就醫"],["病患","病人"],["醫生","醫院"],["醫生","檢查"],["醫生","一下"],["醫生","分享"],["醫生","不是"],["醫生","手術"],["醫生","狀況"],["醫生","等等"],["醫生","還是"],["醫生","有點"],["醫生","知道"],["醫生","一直"],["醫生","不會"],["醫生","出來"],["醫生","可能"],["醫生","有些"],["醫生","很多"],["醫生","真的"],["醫生","因為"],["醫生","沒有"],["醫生","一點"],["醫生","之前"],["醫生","什麼"],["醫生","如果"],["醫生","怎麼"],["醫生","感覺"],["醫生","需要"],["醫生","覺得"],["醫生","一次"],["醫生","可以"],["醫師","醫院"],["醫師","病人"],["醫師","專業"],["醫師","可能"],["醫師","狀況"],["醫師","治療"],["醫師","建議"],["醫師","醫療"],["醫師","醫學"],["醫師","大家"],["醫師","如果"],["醫師","是否"],["醫師","問題"],["醫師","惡化"],["醫師","需要"],["醫師","一定"],["醫師","很多"],["醫師","通常"],["醫師","不是"],["醫師","不要"],["醫師","比較"],["醫師","原因"],["醫師","參考"],["醫師","有關"],["醫師","情況"],["醫師","造成"],["醫師","幾個"],["醫院","醫生"],["醫院","醫師"],["醫院","醫療"],["醫院","等等"],["醫院","健保"],["醫院","專業"],["醫院","檢查"],["醫院","可能"],["醫院","詢問"],["醫院","有人"],["醫院","病人"],["醫院","需要"],["醫院","狀況"],["醫院","分享"],["醫院","如果"],["醫院","小時"],["醫院","有些"],["醫院","幾乎"],["醫學","醫師"],["醫學","人體"],["醫學","研究"],["醫學","一種"],["醫學","世界"],["醫療","健保"],["醫療","醫院"],["醫療","費用"],["醫療","需求"],["醫療","專業"],["醫療","醫師"],["醫療","藥物"],["醫療","問題"],["醫療","政治"],["醫療","人員"],["醫療","服務"],["醫療","病人"],["醫療","政府"],["醫療","必須"],["醫療","透過"],["醫療","解決"],["醫療","對於"],["醫療","具有"],["醫療","社會"],["醫療","每年"],["醫療","治療"],["醫療","提供"],["醫療","需要"],["醫療","如何"],["藥物","統計"],["藥物","治療"],["藥物","目前"],["藥物","具有"],["藥物","來源"],["藥物","服用"],["藥物","對於"],["藥物","醫療"],["藥物","研究"],["藥物","反應"],["藥物","方式"],["藥物","由於"],["藥物","因此"],["藥物","可能"],["藥物","使用"],["藥物","甚至"],["藥物","效果"],["藥物","可以"],["藥物","造成"],["藥物","結果"],["藥物","資料"],["藥物","了解"],["藥物","公司"],["藥物","產生"],["藥物","資訊"],["藥物","需要"],["藥物","主要"],["藥物","問題"],["藥物","專業"],["藥物","許多"],["藥物","這些"],["藥物","導致"],["藥物","必須"],["藥物","利用"],["藥物","病人"],["藥物","透過"],["藥物","進行"],["藥物","疾病"]]);
+ 
+var color = d3.scale.category20c();
+jsnx.draw(G, {
+    element: '#canvas',
+    withLabels: true, 
+    layoutAttr: {
+        charge: -120,
+        linkDistance: 20
+    },
+    nodeAttr: {
+        r: 15,     
+        title: function(d) { return d.label;}
+    },
+    nodeStyle: {
+        fill: '#A180EC',
+        font: '50px'
+   
+    },
+    labelStyle:{
+      'font-size': '1.2em',
+      'font-weight': 'bold'
+    },
+    edgeStyle: {
+        fill: '#999',
+         'stroke-width': 10
+    }
+});
+</script>
+{% endblock %}
+
+{% block maincontent%}
+<div class="container">
+    <section class="page-title">
+        <h1>文字探勘</h1>
+    </section>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="comment-title">
+            <h4>熱門輿情</h4>
+        </div>
+        <dl class="visitor-rating">
+            <dt><a href="https://www.ptt.cc/bbs/BabyMother/M.1480865713.A.388.html">有沒有父母都不帶寶寶出門的</a></dt>
+            <dd>303</dd>
+         
+            <dt><a href="https://www.ptt.cc/bbs/BabyMother/M.1480902903.A.DED.html">[寶寶] 腸病毒又來了......</a></dt>
+            <dd>28</dd>
+            <dt><a href="https://www.ptt.cc/bbs/Kaohsiung/M.1480784340.A.7E4.html">[新聞] 〈南部〉全民免費 高市流感疫苗估兩週內</a></dt>
+            <dd>17</dd>
+            <dt><a href="https://www.ptt.cc/bbs/TaichungBun/M.1481052681.A.9C9.html">[新聞] 流感免費疫苗新增接種對象 臺中總醫院公</a></dt>
+            <dd>14</dd>
+            <dt><a href="https://www.ptt.cc/bbs/MenTalk/M.1480947465.A.CA9.html">[閒聊] 流感疫苗</a></dt>
+            <dd>9</dd>
+        </dl>
+        <!--end title-->
+        <div class="options">
+        </div>
+        <!--end options-->
+        <div class="collapse in" id="reply_1">
+            <div class="answer">
+                <form class="form labels-uppercase clearfix" id="form_reply_1">
+                </form>
+            </div>
+            <!--end answer-->
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end col-md-6-->
+    <div class="col-md-6">
+        <div class="comment-title">
+            <figure class="rating"></figure>
+            <h4>輿情發表者</h4>
+        </div>
+        <!--end title-->
+        <dl class="visitor-rating">
+            <dt><a href="https://www.ptt.cc/bbs/Hate/M.1476372856.A.0C0.html">lizzie20408</a></dt>
+            <dd>6</dd>
+            <dt><a href="https://www.ptt.cc/bbs/Gossiping/M.1475758711.A.CFB.html">eachen</a></dt>
+            <dd>5</dd>
+            <dt><a href="https://www.ptt.cc/bbs/Gossiping/M.1474607702.A.818.html">Dialysis</a></dt>
+            <dd>5</dd>
+            <dt><a href="https://www.ptt.cc/bbs/WomenTalk/M.1478098826.A.4F6.html">WangTaBo</a></dt>
+            <dd>4</dd>
+            <dt><a href="https://www.ptt.cc/bbs/Taitung/M.1480005839.A.AB6.html">On10n</a></dt>
+            <dd>4</dd>
+        </dl>
+        <div class="options">
+        </div>
+        <!--end options-->
+        <div class="collapse in" id="reply_1">
+            <div class="answer">
+            </div>
+            <!--end answer-->
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end col-md-6-->
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+        <div class="comment-title">
+            <h4>文字關聯分析</h4>
+        </div>
+        <!--end title-->
+        <div id='canvas' style='height:300px;'> </div>
+        <!--end options-->
+        <div class="collapse in" id="reply_1">
+            <!--end answer-->
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end col-md-12-->
+    </div>
+</div>
+{% endblock %}

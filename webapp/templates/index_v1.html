@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dmap</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" rel="stylesheet" type="text/css" />
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" /> -->
+        <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/vis/3.12.0/vis.min.css" rel="stylesheet" type="text/css" /> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+        <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.0/leaflet.awesome-markers.css" rel="stylesheet" type="text/css" />
+        <link href="/static/js/util/leaflet.label/leaflet.label.css" rel="stylesheet" type="text/css" />
+        <link href="/static/css/leaflet_control.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- <link href="http://jdewit.github.io/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" /> -->
+        <style>
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 220px;
+        }
+
+        #bar_chart {
+            z-index: 10000;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            height: 130px;
+            width: 250px;
+        }
+
+        #timeline {
+            height: 220px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #vis_stream {
+            height: 220px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        .datetimeControl p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .cat_0{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: DarkRed;
+            stroke: DarkRed;
+        }
+
+        .cat_1{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: red;
+            stroke: red;
+        }
+
+
+        .cat_2{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: orange;
+            stroke: orange;
+        }
+
+        .cat_3{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: purple;
+            stroke: purple;
+        }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="bar_chart"></div>
+        <div id="map"></div>
+        <div id="timeline"></div>
+        <div id="vis_stream"></div>
+        <div id="visualization"></div>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet-src.js"></script>
+        <!-- <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script> -->
+
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="http://jdewit.github.io/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.0/leaflet.awesome-markers.js"></script>
+
+
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/vis/3.12.0/vis.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+
+
+        <script src="/static/js/util/leaflet.label/leaflet.label.js"></script>
+        <script src="/static/js/util/LeafletPlayback.js"></script>
+        <script src="/static/js/util/leaflet_control.js"></script>
+        <script src="/static/js/util/canvasjs.min.js"></script>
+
+
+        <!--
+        <script src="/static/js/util/demo-tracks.js"></script>
+        <script src="/static/js/util/demo-tracks2.js"></script>
+        <script src="/static/js/util/demo-tracks3.js"></script>
+        <script src="/static/js/util/example_1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+        -->
+        <script src="/static/js/handle_bar_chart.js"></script>
+        <script src="/static/js/handle_nav_bar.js"></script>
+        <script src="/static/js/handle_countline.js"></script>
+        <script src="/static/js/handle_data.js"></script>
+        <script src="/static/js/handle_map.js"></script>
+        <script src="/static/js/handle_push_content.js"></script>
+        <script src="/static/js/handle_timeline.js"></script>
+        <script src="/static/js/handle_playback.js"></script>
+        <script src="/static/js/main.js"></script>
+    </body>
+</html>

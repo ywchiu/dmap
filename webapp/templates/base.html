@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ThemeStarz">
+
+    <link href="/static/assets/fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="/static/assets/fonts/elegant-fonts.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/zabuto_calendar.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/trackpad-scroll-emulator.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/jquery.nouislider.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/style.css" type="text/css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.17.0/vis.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.2/jsgrid.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.2/jsgrid-theme.min.css" />
+
+    <link href="/static/css/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/leaflet_control.css" rel="stylesheet" type="text/css" />
+    <link href="/static/js/util/leaflet.label/leaflet.label.css" rel="stylesheet" type="text/css" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/leaflet_control.css" rel="stylesheet" type="text/css" />
+
+    <!--
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+    -->
+
+    <title>Dmap</title>
+
+
+    <style>
+        #overlay{
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        #pg {
+            position: absolute;
+            /*left: 0;*/
+            /*top: 0;*/
+            z-index: 1000;
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            /*position: relative;*/
+            -webkit-animation-duration: 2s;
+            -webkit-animation-delay: 2s;
+            -webkit-animation-iteration-count: infinite;
+        }
+
+        /*
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 220px;
+            bottom: 500px;
+        }*/
+
+        #bar_chart {
+            /*z-index: 10000;*/
+            position: absolute;
+            /*left: 5px;
+            top: 53px;
+            height: 130px;*/
+            right: 0px;
+            bottom: 0;
+            width: 250px;
+            height: 200px;
+            background: white;
+            border-style:solid;
+            border-width:2px;
+            border-color:lightgray;
+        }
+
+        #timeline {
+            height: 220px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #vis_stream {
+            /*z-index: 10000;*/
+            height: 200px;
+            position: absolute;
+            /*left: 0;*/
+            right: 250px;
+            bottom: 0;
+            background: white;
+            /*width: 100%;*/
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+        .datetimeControl p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .cat_0{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: #661d00;
+            stroke: #661d00;
+        }
+        .cat_1{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: #ff6d33;
+            stroke: #ff6d33;
+        }
+        .cat_2{
+            fill-opacity:0;
+            stroke-width:1px;
+            /*orange*/
+            fill: #ffdacc;
+            stroke: #ffdacc;
+        }
+        .cat_3{
+            fill-opacity:0;
+            stroke-width:1px;
+            /*purple*/
+            fill: #0a420a;
+            stroke: #0a420a;
+        }
+        .cat_4{
+            fill-opacity:0;
+            stroke-width:1px;
+            /*green*/
+            fill: #38e038;
+            stroke: #38e038;
+        }
+        .cat_5{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: #d3f8d3;
+            stroke: #d3f8d3;
+        }
+        .cat_6{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: #443e09;
+            stroke: #443e09;
+        }
+        .cat_7{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: #e2ce1d;
+            stroke: #e2ce1d;
+        }
+        .cat_8{
+            fill-opacity:0;
+            stroke-width:1px;
+            fill: #f9f5d2;
+            stroke: #f9f5d2;
+        }
+        .marker{
+            -webkit-animation-duration: 0.4s;
+        }
+
+    </style>
+    <link href="/static/css/countline_legend_style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="homepage">
+
+<!-- <div class="modal-item-detail modal-dialog" role="document"> -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="document">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">Upload a report</h2>
+            </div>
+            <div class="modal-body">
+                <div id="jsGrid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="overlay"><div id="pg" class="animated pulse"></div></div>
+<div class="page-wrapper">
+    <header id="page-header">
+        <nav>
+            <div class="left">
+                <a href="/" class="brand">DMAP Analysis</a>
+            </div>
+            <!--end left-->
+            <div class="right">
+                <div class="primary-nav has-mega-menu">
+                    <ul class="navigation">
+                        <!--li><a href="/analysis/">Analysis</a></li-->
+                    </ul>
+                    <!--end navigation-->
+                </div>
+                <!--end primary-nav-->
+                <div class="secondary-nav">
+                </div>
+                <!--end secondary-nav-->
+                <a href="/analysis/" class="btn btn-primary btn-small btn-rounded icon shadow add-listing"><span>Analysis</span></a>
+                <div class="nav-btn">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+                <!--end nav-btn-->
+            </div>
+            <!--end right-->
+        </nav>
+        <!--end nav-->
+    </header>
+    <!--end page-header-->
+
+    <!-- insert header here -->
+    <div id="page-content">
+        {% block maincontent %}
+        {% endblock %}
+    </div>
+    <!--end page-content-->
+        <!--
+    <footer id="page-footer">
+        <div class="footer-wrapper">
+            <div class="block">
+                <div class="container">
+                    <div class="vertical-aligned-elements">
+                        <div class="element width-50">
+                            <p data-toggle="modal" data-target="#myModal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam at neque sit amet vestibulum. <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                        </div>
+                        <div class="element width-50 text-align-right">
+                            <a href="#" class="circle-icon"><i class="social_twitter"></i></a>
+                            <a href="#" class="circle-icon"><i class="social_facebook"></i></a>
+                            <a href="#" class="circle-icon"><i class="social_youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="background-wrapper">
+                        <div class="bg-transfer opacity-50">
+                            <img src="/static/assets/img/footer-bg.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-navigation">
+                <div class="container">
+                    <div class="vertical-aligned-elements">
+                        <div class="element width-50">(C) 2016 Your Company, All right reserved</div>
+                        <div class="element width-50 text-align-right">
+                            <a href="index.html">Home</a>
+                            <a href="listing-grid-right-sidebar.html">Listings</a>
+                            <a href="submit.html">Submit Item</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    -->
+    <!--end page-footer-->
+
+</div>
+<!--end page-wrapper-->
+
+<!-- <div id="timeline"></div> -->
+<div id="Legend" class="external-legend"></div>
+<div id="left_legend" class="external-legend"></div>
+<div id="right_legend" class="external-legend"></div>
+<div id="vis_stream"></div>
+{% block extracontent %}
+{% endblock %}
+<div id="visualization"></div>
+<div id="controler"></div>
+
+<!-- <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> -->
+<script src="/static/js_v2/markercluster.js"></script>
+<script type="text/javascript" src="/static/assets/js/jquery-2.2.1.min.js"></script>
+
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script> -->
+<script type="text/javascript" src="/static/assets/js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/assets/js/bootstrap-select.min.js"></script>
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&libraries=places"></script> -->
+
+
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&libraries=places,visualization&sensor=true_or_false"></script> -->
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&libraries=places,visualization"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.2/jsgrid.min.js"></script>
+
+<script type="text/javascript" src="/static/assets/js/richmarker-compiled.js"></script>
+<script type="text/javascript" src="/static/assets/js/markerclusterer_packed.js"></script>
+<script type="text/javascript" src="/static/assets/js/infobox.js"></script>
+<script type="text/javascript" src="/static/assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/static/assets/js/jquery.fitvids.js"></script>
+<!--<script type="text/javascript" src="/static/assets/js/bootstrap-datepicker.js"></script>-->
+<script type="text/javascript" src="/static/assets/js/icheck.min.js"></script>
+<script type="text/javascript" src="/static/assets/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/static/assets/js/jquery.trackpad-scroll-emulator.min.js"></script>
+<script type="text/javascript" src="/static/assets/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/static/assets/js/jquery.nouislider.all.min.js"></script>
+<!--<script type="text/javascript" src="/static/assets/js/owl.carousel.js"></script>-->
+<!--<script type="text/javascript" src="/static/assets/js/masonry.pkgd.min.js"></script>-->
+
+<script type="text/javascript" src="/static/assets/js/gen_html_template.js"></script>
+
+
+
+<script src="http://jdewit.github.io/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.17.0/vis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="/static/js_v2/circle-progress.js"></script>
+<!-- <script src="/static/js_v2/bounce.js"></script> -->
+
+
+
+
+<script src="/static/js_v2/handle_editable_table.js"></script>
+<script src="/static/js_v2/handle_controler.js"></script>
+<script src="/static/js_v2/handle_countline.js"></script>
+<script src="/static/js_v2/handle_bar_chart.js"></script>
+<script src="/static/js_v2/main.js"></script>
+<script type="text/javascript" src="/static/assets/js/maps.js"></script>
+<script type="text/javascript" src="/static/assets/js/custom.js"></script>
+
+<script>
+    var _latitude = 23.973875;
+    var _longitude = 120.982024;
+    var all_data = null;
+    var all_data_length = null;
+    var refresh_all = null;
+    var countline = null;
+    var bar_chart = null;
+    var bar_chart_category_data = null;
+    var playback = null;
+    var geocoder = new google.maps.Geocoder();;
+    var user_upload_data = [
+        { "Disease": "流感", "Date":new Date('2016/5/24'),"Address":"台北市玉門街1號", "Latitude":25.0703276,"Longitude":121.52175390000002 },
+    ];
+    var map = null;
+    var map_listener = null;
+    var heatmap = null;
+    var showMarkerLabels = false;
+    var newMarkers = [];
+    var markerCluster = null;
+    var data_option = {
+        // category: ['登革熱'],
+        category: ['流感'],
+        start_time: new Date(2015,0,1).getTime(),
+        end_time: new Date(2016,11,1).getTime(),
+        // start_time: null,
+        // end_time: null,
+    };
+    var category_list = [ '登革熱', 'A型肝炎', '流感', '腸病毒' ];
+    var icon_list = [ 'dengue.png', 'a.png', 'flu.png', 'enterovirus.png' ];
+    // var category_list = [ '登革熱', 'A型肝炎', '流感', '腸病毒', '其他' ];
+
+    var element = "map";
+    var markerTarget = "modal"; // use "sidebar", "infobox" or "modal" - defines the action after click on marker
+    var sidebarResultTarget = "modal"; // use "sidebar", "modal" or "new_page" - defines the action after click on marker
+    heroMap(_latitude,_longitude, element, markerTarget, sidebarResultTarget, showMarkerLabels, data_option);
+
+
+</script>
+
+        {% block jscontent %}
+        {% endblock %}
+</body>
+

@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+{% block maincontent%}
+        <div class="hero-section full-screen has-map has-sidebar">
+            <div class="map-wrapper">
+                <div class="map" id="map"></div>
+            </div>
+            <!--end map-wrapper-->
+            <div class="results-wrapper">
+                <div class="form search-form inputs-underline">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="section-title">
+                                    <h2>搜尋</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <!-- <select id="select_category" class="form-control selectpicker" multiple data-selected-text-format="count > 3" name="category" title="category" data-actions-box="true"> -->
+                                    <select id="select_category" class="form-control selectpicker" multiple data-selected-text-format="count > 2" name="category" title="category">
+                                       <!--  <option value="1" selected="selected">Restaurant</option>
+                                        <option value="2">Event</option>
+                                        <option value="3">Adrenaline</option>
+                                        <option value="4">Sport</option>
+                                        <option value="5">Wellness</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end form-group-->
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control date-picker" name="start_time" placeholder="Start time">
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                            <!--end col-md-6-->
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control date-picker" name="end_time" placeholder="End time">
+                                </div>
+                                <!--end form-group-->
+                            </div>
+                            <!--end col-md-6-->
+                        </div>
+                        <!--end row-->
+                        <!--end row-->
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <button type="s" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="glyphicon glyphicon-upload"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end form-group-->
+                    </form>
+                    <!--end form-hero-->
+                </div>
+
+                <div class="results">
+                    <div class="tse-scrollable">
+                        <div class="tse-content">
+                            <div class="section-title">
+                                <h2>輿論數<span class="results-number"></span></h2>
+                            </div>
+                            <!--end section-title-->
+                            <div class="results-content"></div>
+                            <!--end results-content-->
+                        </div>
+
+                        <!--end tse-content-->
+                    </div>
+                    <!--end tse-scrollable-->
+                </div>
+                <!--end results-->
+            </div>
+            <!--end results-wrapper-->
+
+        </div>
+        <!--end hero-section-->
+{% endblock %}
+{% block extracontent %}
+<div id="bar_chart"><canvas id="bar_chart_canvas"></canvas></div>
+{% endblock %}

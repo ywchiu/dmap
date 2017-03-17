@@ -1,0 +1,71 @@
+body { color: $color-grey-dark; font-size: 14px; font-family: 'Lato', sans-serif; position: relative; }
+
+address { margin-bottom: 10px;
+  figure { padding-left: 30px; margin-bottom: 5px; }
+  i { width: 30px; color: $color-default; margin-left: -30px; }
+}
+
+a { @include transition(.2s ease-in-out); @include transform(translateZ(0)); @include transform-style(preserve-3d); color: $color-default; text-decoration: none; position: relative;
+  &:hover, &:active, &:focus { color: darken($color-default, 15%); outline: none !important; text-decoration: none; }
+  &.link { font-size: 10px; font-weight: bold; text-transform: uppercase;
+    &:hover, &:active, &:focus { color: darken($color-default, 5%);
+      &.icon {
+        i { color: $color-grey-dark; }
+      }
+    }
+    &.icon {
+      i { @include transit; font-size: 12px; margin-left: 5px; position: relative; top: 1px; }
+    }
+    &:after { @include elegant-font; @include opacity(.6); content: "$"; font-size: 14px; vertical-align: middle; margin-left: 2px; top: -1px; position: relative; }
+  }
+  &.icon {
+    i { margin: 0 5px; }
+  }
+  &.underline { text-decoration: underline; }
+}
+
+dl { margin-bottom: 0;
+  dt { float: left; padding: 2px 0; }
+  dd { text-align: right; padding: 2px 0; }
+}
+
+.homepage {
+  h2 { @include opacity(.8); color: $color-default; font-size: 36px; font-weight: lighter; }
+  h3 { margin-bottom: 15px; font-weight: lighter; margin-top: 10px; }
+  .section-title { margin-top: 15px; }
+}
+
+h1 { @include opacity(.8); color: $color-default; font-size: 36px; font-weight: lighter; margin-top: 5px; }
+h2 { font-size: 26px; color: $color-default; font-weight: lighter; margin-top: 5px; }
+h3 { margin-top: 0px; color: $color-default; font-size: 18px; margin-bottom: 25px;
+  &.subtitle { @include opacity(.6); color: $color-grey-dark; font-size: 16px; font-weight: normal; }
+  span { padding-left: 5px; }
+}
+h4 { font-size: 14px; font-weight: bold; }
+
+hr { margin-bottom: 30px; margin-top: 30px; }
+
+html, body { height: 100%; }
+
+p { @include opacity(.65); line-height: 18px; }
+
+ul { padding-left: 15px;
+  &.bullets { list-style: none; padding-left: 0px; line-height: 25px;
+    li {
+      &:before { @include font-awesome; content: "\f111"; color: $color-default; font-size: 7px; position: relative; top: -4px; margin-right: 12px; }
+    }
+  }
+  &.checkboxes { list-style: none; padding-left: 0;
+    label { font-weight: normal;
+      span { @include opacity(.6); float: right; font-size: 10px; line-height: 20px; }
+    }
+    &.inline {
+      li { width: 24%; float: left; }
+    }
+  }
+}
+
+section:not(.block) {
+  margin-top: 5px; margin-bottom: 30px;
+  h2 { margin-bottom: 20px; }
+}

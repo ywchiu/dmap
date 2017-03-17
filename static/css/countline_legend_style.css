@@ -1,0 +1,85 @@
+.vis-fill {
+  fill-opacity:0.1;
+  stroke: none;
+}
+
+
+.vis-bar {
+  fill-opacity:0.5;
+  stroke-width:1px;
+}
+
+.vis-point {
+  stroke-width:2px;
+  fill-opacity:1.0;
+}
+
+
+.vis-legend-background {
+  stroke-width:1px;
+  fill-opacity:0.9;
+  fill: #ffffff;
+  stroke: #c2c2c2;
+}
+
+
+.vis-outline {
+  stroke-width:1px;
+  fill-opacity:1;
+  fill: #ffffff;
+  stroke: #e5e5e5;
+}
+
+.vis-icon-fill {
+  fill-opacity:0.3;
+  stroke: none;
+}
+
+div.description-container {
+  float:left;
+  height:30px;
+  /*width:160px;*/
+  padding-left:5px;
+  padding-right:5px;
+  line-height: 30px;
+}
+
+div.icon-container {
+  float:left;
+}
+
+div.legend-element-container {
+  display:inline-block;
+  /*width:200px;*/
+  height:40px;
+  border-style:solid;
+  border-width:1px;
+  border-color: #e0e0e0;
+  /*background-color: #ffffff;*/
+  background-color: rgba(240,248,255, 0.4);
+  margin:4px;
+  padding:4px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor:pointer;
+}
+div.legend-element-container.hidden {
+  background-color: #d3e6ff;
+}
+
+svg.legend-icon {
+  width:30px;
+  height:30px;
+}
+
+div.external-legend {
+  position:absolute;
+  top:0;
+  left:0;
+  margin-left: -5px;
+  /*width: 900px;*/
+}

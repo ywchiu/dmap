@@ -1,0 +1,6 @@
+*.pyc
+*.zip
+*.tar.gz
+csv_archive/*
+1.err
+1.log

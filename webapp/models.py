@@ -14,6 +14,10 @@ class disp_main(models.Model):
     def __unicode__(self):
         return self.title
 
+class keyword(models.Model):
+    keyword = models.CharField(max_length=100, null=True)
+    kwgrp   = models.IntegerField(null=True)
+
 # Create your models here.
 class ptt_main(models.Model):
     url = models.CharField(max_length=1000, unique=True, db_index=True)

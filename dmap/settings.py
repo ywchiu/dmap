@@ -77,7 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'dmapdb',                      # Or path to database file if using sqlite3.
-        'USER': 'ubuntu',                      # Not used with sqlite3.
+        'USER': 'cdcoda',                      # Not used with sqlite3.
         'PASSWORD': 'largitdata',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.

@@ -29727,3 +29727,5 @@ Forbidden (CSRF cookie not set.): /
 [pid: 1251|app: 0|req: 498/3460] 50.139.80.3 () {36 vars in 550 bytes} [Fri Mar 24 14:01:37 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (1 switches on core 0)
 [pid: 1251|app: 0|req: 499/3461] 185.169.230.8 () {28 vars in 306 bytes} [Fri Mar 24 15:06:51 2017] GET / => generated 19518 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 88 bytes (1 switches on core 0)
 [pid: 1250|app: 0|req: 2963/3462] 172.68.132.83 () {50 vars in 729 bytes} [Fri Mar 24 16:01:07 2017] GET / => generated 19518 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (2 switches on core 0)
+Not Found: /testproxy.php
+[pid: 1250|app: 0|req: 2964/3463] 185.25.148.240 () {38 vars in 622 bytes} [Fri Mar 24 16:13:38 2017] GET /testproxy.php => generated 2987 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (2 switches on core 0)

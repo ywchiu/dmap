@@ -13,10 +13,10 @@ import marshal
 class g0v_data_handler(object):
     def __init__(self):
         self.filenames = [
-            ('a.csv', 'big5'), # 確定病名   發病年份    發病月份    縣市  鄉鎮  性別  是否為境外移入 年齡層 確定病例數
-            ('enterovirus.csv', 'big5'), # 確定病名 發病年份    發病月份    縣市  鄉鎮  性別  是否為境外移入 年齡層 確定病例數
-            ('flu.csv', 'big5'), # 確定病名 發病年份    發病月份    縣市  鄉鎮  性別  是否為境外移入 年齡層 確定病例數
-            ('dengue.csv', 'utf8'), # 發病日,個案研判日,通報日,性別,年齡層,居住縣市,居住鄉鎮,居住村里,最小統計區,最小統計區中心點X,最小統計區中心點Y,一級統計區,二級統計區,感染縣市,感染鄉鎮,感染村里,是否境外移入,感染國家,確定病例數,居住村里代碼,感染村里代碼,血清型,內政部居住縣市代碼,內政部居住鄉鎮代碼,內政部感染縣市代碼,內政部感染鄉鎮代碼
+            ('/webapps/dmap/webapp/data/Weekly_Age_County_Gender_0701.csv', 'big5'), # 確定病名   發病年份    發病月份    縣市  鄉鎮  性別  是否為境外移入 年齡層 確定病例數
+            ('/webapps/dmap/webapp/data/NHI_EnteroviralInfection.csv', 'big5'), # 確定病名 發病年份    發病月份    縣市  鄉鎮  性別  是否為境外移入 年齡層 確定病例數
+            ('/webapps/dmap/webapp/data/Age_County_Gender_487a.csv', 'big5'), # 確定病名 發病年份    發病月份    縣市  鄉鎮  性別  是否為境外移入 年齡層 確定病例數
+            ('/webapps/dmap/webapp/data/Weekly_Age_County_Gender_061.csv', 'utf8'), # 發病日,個案研判日,通報日,性別,年齡層,居住縣市,居住鄉鎮,居住村里,最小統計區,最小統計區中心點X,最小統計區中心點Y,一級統計區,二級統計區,感染縣市,感染鄉鎮,感染村里,是否境外移入,感染國家,確定病例數,居住村里代碼,感染村里代碼,血清型,內政部居住縣市代碼,內政部居住鄉鎮代碼,內政部感染縣市代碼,內政部感染鄉鎮代碼
         ]
 #         self.data_filename = "g0v_data.pickle"
         self.data_filename = "g0v_data.marshal"

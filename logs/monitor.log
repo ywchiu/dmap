@@ -29730,3 +29730,44 @@ Forbidden (CSRF cookie not set.): /
 Not Found: /testproxy.php
 [pid: 1250|app: 0|req: 2964/3463] 185.25.148.240 () {38 vars in 622 bytes} [Fri Mar 24 16:13:38 2017] GET /testproxy.php => generated 2987 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (2 switches on core 0)
 [pid: 1251|app: 0|req: 500/3464] 101.108.163.156 () {26 vars in 284 bytes} [Fri Mar 24 16:51:02 2017] GET / => generated 19518 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 88 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2965/3465] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:04:26 2017] POST / => generated 2857 bytes in 2 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2966/3466] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:06:26 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2967/3467] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:08:26 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2968/3468] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:10:27 2017] POST / => generated 2857 bytes in 2 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2969/3469] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:12:27 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2970/3470] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:14:27 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2971/3471] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:16:27 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2972/3472] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:18:28 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2973/3473] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:20:28 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2974/3474] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:22:28 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2975/3475] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:24:28 2017] POST / => generated 2857 bytes in 2 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2976/3476] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:26:29 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2977/3477] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:28:29 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2978/3478] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:30:29 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2979/3479] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:32:29 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2980/3480] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:34:30 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2981/3481] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:36:30 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2982/3482] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:38:30 2017] POST / => generated 2857 bytes in 2 msecs (HTTP/1.1 403) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 1251|app: 0|req: 501/3483] 23.247.27.27 () {32 vars in 497 bytes} [Fri Mar 24 17:38:38 2017] GET / => generated 19518 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2983/3484] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:40:30 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)
+Forbidden (CSRF cookie not set.): /
+[pid: 1250|app: 0|req: 2984/3485] 98.244.236.69 () {36 vars in 544 bytes} [Fri Mar 24 17:42:31 2017] POST / => generated 2857 bytes in 1 msecs (HTTP/1.1 403) 2 headers in 80 bytes (2 switches on core 0)

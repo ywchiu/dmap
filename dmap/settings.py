@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'dmap.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.postgresql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'dmapdb',                      # Or path to database file if using sqlite3.
         'USER': 'ubuntu',                      # Not used with sqlite3.
         'PASSWORD': 'largitdata',                  # Not used with sqlite3.

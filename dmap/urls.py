@@ -21,7 +21,7 @@ from webapp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
+    url(r'^dmap/$', views.index, name='index'),
     url(r'^analysis/$', views.analysis, name='analysis'),
     url(r'^all_data/$', views.get_all_data, name='all_data'),
     url(r'^all_geo_data/$', views.get_all_geo_data, name='all_geo_data'),
